@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="AboutTitle"
+        android:title="標题"
+        android:summary="@string/default_abouttitle"
+        android:defaultValue="@string/default_abouttitle"
+        android:selectAllOnFocus="true"
+        android:inputType="textCapWords"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+
+    <EditTextPreference
+        android:key="RegisteredTime"
+        android:title="註冊日期"
+        android:summary="@string/default_registeredtime"
+        android:defaultValue="@string/default_registeredtime"
+        android:selectAllOnFocus="true"
+        android:inputType="textCapWords"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+
+    <EditTextPreference
+        android:key="LockedTime"
+        android:title="上鎖日期"
+        android:summary="@string/default_lockedtime"
+        android:defaultValue="@string/default_lockedtime"
+        android:selectAllOnFocus="true"
+        android:inputType="textCapWords"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+
+    <EditTextPreference
+        android:key="UnlockedTime"
+        android:title="解鎖日期"
+        android:summary="@string/default_unlockedtime"
+        android:defaultValue="@string/default_unlockedtime"
+        android:selectAllOnFocus="true"
+        android:inputType="textCapWords"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+
+    <EditTextPreference
+        android:key="SettingFileVersion"
+        android:title="設定檔版本"
+        android:summary="@string/default_settingfileversion"
+        android:defaultValue="@string/default_settingfileversion"
+        android:selectAllOnFocus="true"
+        android:inputType="textCapWords"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+
+    <EditTextPreference
+        android:key="LockedPeriod"
+        android:title="上鎖時段"
+        android:summary="@string/default_lockedperiod"
+        android:defaultValue="@string/default_lockedperiod"
+        android:selectAllOnFocus="true"
+        android:inputType="textMultiLine"
+        android:capitalize="words"
+        android:singleLine="false"
+        android:maxLines="5" />
+</PreferenceScreen>

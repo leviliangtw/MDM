@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <ListPreference
+        android:key="UpdateEventList"
+        android:title="事件/上鎖"
+        android:entries="@array/pref_events_list"
+        android:entryValues="@array/pref_events_list_values"
+        android:defaultValue="0"/>
+
+    <EditTextPreference
+        android:key="UpdateRecordTime"
+        android:title="登錄時間"
+        android:hint="yyyy/mm/dd hh:mm:ss"
+        android:selectAllOnFocus="true"
+        android:inputType="textCapWords"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+
+    <EditTextPreference
+        android:key="UpdateUploadTime"
+        android:title="上傳時間"
+        android:hint="yyyy/mm/dd hh:mm:ss"
+        android:summary="@string/default_updateuploadtime"
+        android:defaultValue="@string/default_updateuploadtime"
+        android:selectAllOnFocus="true"
+        android:inputType="textCapWords"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+
+    <Preference
+        android:key="ConfirmUpdate"
+        android:title="新增紀錄" />
+
+    <Preference
+        android:key="Add100RandomRecords"
+        android:title="新增百筆隨機紀錄" />
+
+    <Preference
+        android:key="DeleteAll"
+        android:title="清除所有紀錄" />
+</PreferenceScreen>

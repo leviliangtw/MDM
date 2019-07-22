@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:theme="@style/AppTheme.NoActionBar"
+    tools:context=".RecordLookUpActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/thereIs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="有" />
+
+    <TextView
+        android:id="@+id/recordNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/thereIs"
+        android:layout_weight="1"
+        android:text="226" />
+
+    <TextView
+        android:id="@+id/noUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/recordNum"
+        android:layout_weight="1"
+        android:text="筆紀錄未上傳。" />
+
+    <TextView
+        android:id="@+id/timeSpan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/thereIs"
+        android:layout_weight="1"
+        android:text="登錄時間範圍：" />
+
+    <TextView
+        android:id="@+id/start_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timeSpan"
+        android:layout_weight="1"
+        android:hint="2018/07/03 14:19"
+        android:inputType="date|time"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tilde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timeSpan"
+        android:layout_toRightOf="@+id/start_time"
+        android:layout_weight="1"
+        android:hint="~"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/end_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timeSpan"
+        android:layout_toRightOf="@+id/tilde"
+        android:layout_weight="1"
+        android:hint="2018/07/03 14:19"
+        android:inputType="date|time"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/theNewest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_time"
+        android:layout_weight="1"
+        android:text="最新" />
+
+    <TextView
+        android:id="@+id/newNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/theNewest"
+        android:layout_toRightOf="@+id/theNewest"
+        android:layout_weight="1"
+        android:text="5" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/theNewest"
+        android:layout_below="@+id/newNum"
+        android:layout_toRightOf="@+id/newNum"
+        android:layout_weight="1"
+        android:text="筆內容"/>
+
+    <ListView
+        android:id="@+id/record5lists"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/content" />
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="上傳"
+        android:textSize="14sp"/>
+
+</RelativeLayout>

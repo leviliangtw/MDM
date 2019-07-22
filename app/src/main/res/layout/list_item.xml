@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="事件"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"/>
+    <TextView
+        android:id="@+id/recordtimetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/event"
+        android:text="登錄時間：" />
+    <TextView
+        android:id="@+id/recordtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event"
+        android:layout_toRightOf="@id/recordtimetitle"
+        android:text="2018/07/05 00:07" />
+    <TextView
+        android:id="@+id/uploadtimetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/recordtime"
+        android:text="上傳時間：" />
+    <TextView
+        android:id="@+id/uploadtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recordtime"
+        android:layout_toRightOf="@+id/uploadtimetitle"
+        android:text="2018/07/05 00:08" />
+
+</RelativeLayout>

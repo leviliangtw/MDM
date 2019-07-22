@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:id="@+id/mainLayout"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="4dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/lockedColor"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main" tools:context=".MainActivity">
+
+    <TextView android:text="已上鎖，可進入公館營區"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/State"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="公館營區"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="80dp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/currentBaracks"
+        android:layout_below="@+id/State"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上鎖:進入管制模式   "
+        android:textSize="20dp"
+        android:textAlignment="textStart"
+        android:drawableLeft="@mipmap/littlegreenpot"
+        android:id="@+id/lock"
+        android:background="#99FFFFFF"
+        android:layout_below="@+id/currentBaracks"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="解鎖:離開管制模式   "
+        android:textSize="20dp"
+        android:textAlignment="textStart"
+        android:drawableLeft="@mipmap/littleredpot"
+        android:id="@+id/unlock"
+        android:background="#99FFFFFF"
+        android:layout_below="@+id/lock"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:id="@+id/mndImage"
+        android:src="@drawable/tagbg_rd"
+        android:layout_below="@+id/unlock"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/saveTagText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/mndImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/tw_kai"
+        android:text="國軍營內民用通信\n資訊器材管制標籤"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16dp"
+        android:lineSpacingExtra="10dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:text="D083486"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/saveTagNum"
+        android:layout_alignBottom="@+id/mndImage"
+        android:layout_marginBottom="0dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="38dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold" />
+
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:format24Hour="(yyyy-MM-dd HH:mm:ss)"/>
+
+
+
+</RelativeLayout>

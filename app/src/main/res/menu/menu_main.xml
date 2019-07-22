@@ -1,0 +1,53 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/menu_systemMenu" android:title="系統選單"
+         android:orderInCategory="101" app:showAsAction="ifRoom|withText">
+        <menu>
+            <item android:id="@+id/action_lockUsualBaracks" android:title="上鎖 - 常駐營區"
+                android:orderInCategory="100" app:showAsAction="never" android:enabled="false"  />
+            <item android:id="@+id/action_lockNewBaracksQRCode" android:title="上鎖 - 出差(QRCode)"
+                android:orderInCategory="100" app:showAsAction="never" android:enabled="false"  />
+            <item android:id="@+id/action_lockNewBaracksWiFi" android:title="上鎖 - 新營區(WiFi)"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_lockRecentBaracks" android:title="上鎖 - 近期到訪營區"
+                android:orderInCategory="100" app:showAsAction="never"  android:enabled="true" />
+            <item android:id="@+id/action_lockMoveBaracks" android:title="上鎖 - 船艦模式"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_transCommBaracks" android:title="轉換一般營區"
+                android:orderInCategory="100" app:showAsAction="never"  android:enabled="false" />
+            <item android:id="@+id/action_unlockFixLocation" android:title="定點解鎖"
+                android:orderInCategory="100" app:showAsAction="never"  android:enabled="false" />
+            <item android:id="@+id/action_unlockByPasswd" android:title="解鎖 - 密碼"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_GPSStatus" android:title="定位狀況查詢"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_fakeGPSInspect" android:title="偽冒定位檢查"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_serviceGPS" android:title="定位服務(GPS)"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_settingOfAutoLock" android:title="自動上鎖設定"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_recordUploadByWiFi" android:title="紀錄 - 上傳(WiFi)"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_recordLookUp" android:title="紀錄 - 查詢"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_checkVersionByWifi" android:title="新版檢查(WiFi)"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_updateMDMsettingByWifi" android:title="更新MDM設定(WiFi)"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_RegisterByWiFi" android:title="註冊(WiFi)"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_about" android:title="關於程式"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_settings" android:title="設定"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_leave" android:title="離開"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/action_remove" android:title="解除APP"
+                android:orderInCategory="100" app:showAsAction="never"  />
+            <item android:id="@+id/connectionTest" android:title="註冊電腦連線測試"
+                android:orderInCategory="100" app:showAsAction="never"  />
+        </menu>
+    </item>
+</menu>
