@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">手機 MDM</string>
+    <string name="app_name">MDM</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_unlock">UnlockActivity</string>
     <string name="title_activity_settings">Settings</string>
@@ -11,7 +11,7 @@
     <string name="default_safetagnum">D083486</string>
 
     <string name="pref_header_mdmAbout">About</string>
-    <string name="default_abouttitle">MDM V2.42: 2017-11-22</string>
+    <string name="default_abouttitle">MDM V2.61: 2017-11-22</string>
     <string name="default_registeredtime">2017-11-29 15:07:40</string>
     <string name="default_lockedtime">2018-07-04 21:17:39</string>
     <string name="default_unlockedtime">2018-07-04 09:38:11</string>
