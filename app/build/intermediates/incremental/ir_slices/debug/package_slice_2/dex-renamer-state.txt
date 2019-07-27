@@ -1,4 +1,0 @@
-#Sat Jul 27 18:05:09 CST 2019
-base.0=/home/leviliang/workspaceForAndroidStudio/MDM/app/build/intermediates/transforms/dexMerger/debug/2
-path.0=classes.dex
-renamed.0=classes.dex
