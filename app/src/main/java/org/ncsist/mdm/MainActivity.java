@@ -58,8 +58,11 @@ public class MainActivity extends AppCompatActivity {
     private String lockedperiod;
 
     public static final String[] recentBaracks = new String[] {
-            "福興營區",
+            "博愛營區",
+            "大漢營區",
+            "大直營區",
             "忠勇營區",
+            "福興營區",
             "美崙山",
             "四支部",
             "佳山營區",
@@ -504,19 +507,19 @@ public class MainActivity extends AppCompatActivity {
         // 偏好設定
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        String defaultTitle = Integer.toString(R.string.default_version);
-        String defaultBarracks = Integer.toString(R.string.default_barracks);
-        String defaultSafetagnum = Integer.toString(R.string.default_safetagnum);
-        String defaultAboutTitle = Integer.toString(R.string.default_abouttitle);
-        String defaultRegisteredTime = Integer.toString(R.string.default_registeredtime);
-        String defaultLockedTime = Integer.toString(R.string.default_lockedtime);
-        String defaultUnlockedTime = Integer.toString(R.string.default_unlockedtime);
-        String defaultSettingFileVersion = Integer.toString(R.string.default_settingfileversion);
-        String defaultLockedPeriod = Integer.toString(R.string.default_lockedperiod);
+        String defaultTitle = getResources().getString(R.string.default_version);
+        String defaultBarracks = getResources().getString(R.string.default_barracks);
+        String defaultSafeTagNum = getResources().getString(R.string.default_safetagnum);
+        String defaultAboutTitle = getResources().getString(R.string.default_abouttitle);
+        String defaultRegisteredTime = getResources().getString(R.string.default_registeredtime);
+        String defaultLockedTime = getResources().getString(R.string.default_lockedtime);
+        String defaultUnlockedTime = getResources().getString(R.string.default_unlockedtime);
+        String defaultSettingFileVersion = getResources().getString(R.string.default_settingfileversion);
+        String defaultLockedPeriod = getResources().getString(R.string.default_lockedperiod);
 
         title = sharedPreferences.getString("VERSION", defaultTitle);
         barracks = sharedPreferences.getString("BARRACKS", defaultBarracks);
-        safetagnum = sharedPreferences.getString("SAFETAGNUM", defaultSafetagnum);
+        safetagnum = sharedPreferences.getString("SAFETAGNUM", defaultSafeTagNum);
         abouttitle = sharedPreferences.getString("AboutTitle", defaultAboutTitle);
         registeredtime  = sharedPreferences.getString("RegisteredTime", defaultRegisteredTime);
         lockedtime = sharedPreferences.getString("LockedTime", defaultLockedTime);
@@ -525,6 +528,7 @@ public class MainActivity extends AppCompatActivity {
         lockedperiod = sharedPreferences.getString("LockedPeriod", defaultLockedPeriod);
 
         TextView saveTagNum = (TextView)findViewById(R.id.saveTagNum);
+        saveTagNum.setText(safetagnum);
 
 
         toolbar.setTitle(title);
