@@ -8,5 +8,6 @@
     <color name="white">#ffffff</color>
     <color name="orange">#FFA500</color>
     <color name="blue">#0000FF</color>
-    <color name="holoblue">#33b5e5</color>
+    <color name="holoblue">#33b5e5</color>>
+    <color name="transparent">#00000000</color>
 </resources>

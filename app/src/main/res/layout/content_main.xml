@@ -65,7 +65,7 @@
         android:layout_below="@+id/unlock"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:background="@xml/bg_border"
+        android:background="@drawable/bg_border"
         android:padding="1dp"
         android:src="@drawable/tagbg_rd" />
 

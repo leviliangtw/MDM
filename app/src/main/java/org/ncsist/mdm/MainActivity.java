@@ -5,12 +5,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.DialogPreference;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
@@ -44,7 +47,11 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonLock;
     private Button buttonUnLock;
     private RelativeLayout mainLayout;
-    private TextClock mTextClock;
+    // private TextClock mTextClock;
+    private ImageView mndImage;
+    private TextView saveTagText;
+    private TextView saveTagNum;
+
 
     private String title;
     private String barracks;
@@ -91,6 +98,9 @@ public class MainActivity extends AppCompatActivity {
         buttonLock = (Button)findViewById(R.id.lock);
         buttonUnLock = (Button)findViewById(R.id.unlock);
         mainLayout = (RelativeLayout) findViewById(R.id.mainLayout);
+        mndImage = (ImageView) findViewById(R.id.mndImage);
+        saveTagText = (TextView) findViewById(R.id.saveTagText);
+        saveTagNum = (TextView) findViewById(R.id.saveTagNum);
 
         buttonLock.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +121,17 @@ public class MainActivity extends AppCompatActivity {
                         public void onClick(DialogInterface arg0, int arg1) {
                             // TODO Auto-generated method stub
                             mainLayout.setBackgroundColor(Color.GREEN);
+
+                            // 20190804/leviliang/Switch Background src between lock and unlock mode
+                            float scale = getResources().getDisplayMetrics().density;
+                            int dpAsPixels = (int) (1*scale + 0.5f);
+                            mndImage.setBackgroundResource(R.drawable.bg_border);
+                            mndImage.setImageDrawable(getResources().getDrawable(R.drawable.tagbg_rd));
+                            mndImage.getLayoutParams().height = (int) (100*scale + 0.5f);
+                            mndImage.setPadding(dpAsPixels, dpAsPixels, dpAsPixels, dpAsPixels);
+                            saveTagText.setVisibility(View.VISIBLE);
+                            saveTagNum.setVisibility(View.VISIBLE);
+
                             state.setText("已上鎖，可進入" + barracks);
                             currentBaracks.setText(barracks);
                             Toast.makeText(MainActivity.this, "進入管制模式！", Toast.LENGTH_SHORT).show();
@@ -162,6 +183,15 @@ public class MainActivity extends AppCompatActivity {
                         public void onClick(DialogInterface arg0, int arg1) {
                             // TODO Auto-generated method stub
                             mainLayout.setBackgroundColor(Color.YELLOW);
+
+                            // 20190804/leviliang/Switch Background src between lock and unlock mode
+                            float scale = getResources().getDisplayMetrics().density;
+                            mndImage.setBackground(getResources().getDrawable(R.color.transparent));
+                            mndImage.setImageDrawable(getResources().getDrawable(R.drawable.mdm_icon1));
+                            mndImage.getLayoutParams().height = (int) (180*scale + 0.5f);
+                            saveTagText.setVisibility(View.INVISIBLE);
+                            saveTagNum.setVisibility(View.INVISIBLE);
+
                             state.setText("解鎖中，尚無定位資訊");
                             currentBaracks.setText("解鎖中");
                             Toast.makeText(MainActivity.this, "將以定位判斷是否離開管制區！", Toast.LENGTH_SHORT).show();
@@ -183,6 +213,15 @@ public class MainActivity extends AppCompatActivity {
                         public void onClick(DialogInterface arg0, int arg1) {
                             // TODO Auto-generated method stub
                             mainLayout.setBackgroundColor(Color.YELLOW);
+
+                            // 20190804/leviliang/Switch Background src between lock and unlock mode
+                            float scale = getResources().getDisplayMetrics().density;
+                            mndImage.setBackground(getResources().getDrawable(R.color.transparent));
+                            mndImage.setImageDrawable(getResources().getDrawable(R.drawable.mdm_icon1));
+                            mndImage.getLayoutParams().height = (int) (180*scale + 0.5f);
+                            saveTagText.setVisibility(View.INVISIBLE);
+                            saveTagNum.setVisibility(View.INVISIBLE);
+
                             state.setText("解鎖中，尚無定位資訊");
                             currentBaracks.setText("解鎖中");
                             Toast.makeText(MainActivity.this, "將以定位判斷是否離開管制區！", Toast.LENGTH_SHORT).show();
@@ -193,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     mainLayout.setBackgroundColor(Color.RED);
-                                    state.setText("未上鎖，不得進入管制營區");
+                                    state.setText("未上鎖，不得進入管制區");
                                     currentBaracks.setText("未上鎖");
                                 }
                             },2000);
