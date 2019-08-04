@@ -12,7 +12,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
-    <TextView android:text="已上鎖，可進入公館營區"
+    <TextView android:text="已上鎖，可進入召喚峽谷"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"
@@ -21,7 +21,7 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="公館營區"
+        android:text="召喚峽谷"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="80dp"
@@ -85,7 +85,7 @@
         android:textStyle="normal" />
 
     <TextView
-        android:text="D083486"
+        android:text="A123456"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/saveTagNum"
