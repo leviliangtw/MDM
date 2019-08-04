@@ -10,7 +10,7 @@ Because you should compile the whole project on your own; thus you should instal
 ### Prerequisites
 
 ```
-OS: Windows, Linux or IOS
+OS: Windows or Linux
 Software: git, JDK 8 and Android Studio
 ```
 
