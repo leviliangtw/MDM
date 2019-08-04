@@ -6,12 +6,12 @@
 
     <!-- Strings related to Settings -->
     <string name="pref_header_mdmMainPage">Main Page</string>
-    <string name="default_version">國軍 MDM V2.61</string>
-    <string name="default_barracks">福興營區</string>
-    <string name="default_safetagnum">D083486</string>
+    <string name="default_version">MDM VX.XX</string>
+    <string name="default_barracks">召喚峽谷</string>
+    <string name="default_safetagnum">A123456</string>
 
     <string name="pref_header_mdmAbout">About</string>
-    <string name="default_abouttitle">MDM V2.61: 2017-11-22</string>
+    <string name="default_abouttitle">MDM VX.XX: 2017-11-22</string>
     <string name="default_registeredtime">2017-11-29 15:07:40</string>
     <string name="default_lockedtime">2018-07-04 21:17:39</string>
     <string name="default_unlockedtime">2018-07-04 09:38:11</string>
