@@ -33,6 +33,7 @@ import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private String title;
     private String barracks;
     private String safetagnum;
+    private String lucktimetag; // 20190926/leviliang/MDM Update 3.01
     private String now;
     private String abouttitle;
     private String registeredtime;
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd HH:mm:ss");
         Date curDate = new Date(System.currentTimeMillis()) ; // 獲取當前時間
         now = formatter.format(curDate);
 
@@ -201,9 +203,22 @@ public class MainActivity extends AppCompatActivity {
                             handler.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    mainLayout.setBackgroundColor(Color.RED);
-                                    state.setText("未上鎖，不得進入管制營區");
-                                    currentBaracks.setText("未上鎖");
+                                    // 20190926/leviliang/MDM Update 3.01
+                                    float scale = getResources().getDisplayMetrics().density;
+                                    int dpAsPixels = (int) (1*scale + 0.5f);
+                                    mndImage.setBackgroundResource(R.drawable.bg_border);
+                                    mndImage.setImageDrawable(getResources().getDrawable(R.drawable.tagbg_rd));
+                                    mndImage.getLayoutParams().height = (int) (100*scale + 0.5f);
+                                    mndImage.setPadding(dpAsPixels, dpAsPixels, dpAsPixels, dpAsPixels);
+                                    saveTagText.setVisibility(View.VISIBLE);
+                                    saveTagNum.setVisibility(View.VISIBLE);
+                                    // mainLayout.setBackgroundColor(Color.RED);
+                                    mainLayout.setBackgroundColor(Color.GREEN);
+                                    // state.setText("未上鎖，不得進入管制營區");
+                                    state.setText("已上鎖，可進入" + barracks);
+                                    // currentBaracks.setText("未上鎖");
+                                    currentBaracks.setText(barracks);
+                                    Toast.makeText(MainActivity.this, "進入管制模式！", Toast.LENGTH_SHORT).show();
                                 }
                             }, 2000);
                         }
@@ -231,9 +246,22 @@ public class MainActivity extends AppCompatActivity {
                             handler.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    mainLayout.setBackgroundColor(Color.RED);
-                                    state.setText("未上鎖，不得進入管制區");
-                                    currentBaracks.setText("未上鎖");
+                                    // 20190926/leviliang/MDM Update 3.01
+                                    float scale = getResources().getDisplayMetrics().density;
+                                    int dpAsPixels = (int) (1*scale + 0.5f);
+                                    mndImage.setBackgroundResource(R.drawable.bg_border);
+                                    mndImage.setImageDrawable(getResources().getDrawable(R.drawable.tagbg_rd));
+                                    mndImage.getLayoutParams().height = (int) (100*scale + 0.5f);
+                                    mndImage.setPadding(dpAsPixels, dpAsPixels, dpAsPixels, dpAsPixels);
+                                    saveTagText.setVisibility(View.VISIBLE);
+                                    saveTagNum.setVisibility(View.VISIBLE);
+                                    // mainLayout.setBackgroundColor(Color.RED);
+                                    mainLayout.setBackgroundColor(Color.GREEN);
+                                    // state.setText("未上鎖，不得進入管制營區");
+                                    state.setText("已上鎖，可進入" + barracks);
+                                    // currentBaracks.setText("未上鎖");
+                                    currentBaracks.setText(barracks);
+                                    Toast.makeText(MainActivity.this, "進入管制模式！", Toast.LENGTH_SHORT).show();
                                 }
                             },2000);
                         }
@@ -569,6 +597,17 @@ public class MainActivity extends AppCompatActivity {
         TextView saveTagNum = (TextView)findViewById(R.id.saveTagNum);
         saveTagNum.setText(safetagnum);
 
+        // 20190926/leviliang/MDM Update 3.01
+        SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat dateFormat2 = new SimpleDateFormat("MM/dd HH:mm:ss");
+        try {
+            Date date = dateFormat1.parse(lockedtime);
+            lucktimetag = dateFormat2.format(date);
+            TextView luckTimeTag = (TextView)findViewById(R.id.luckTimeTag);
+            luckTimeTag.setText("上鎖時間：" + lucktimetag);
+            Log.e("Time", lucktimetag);
+        } catch (ParseException e) {
+        }
 
         toolbar.setTitle(title);
         toolbar.setTitleTextAppearance(this, R.style.Toolbar_TitleText);
